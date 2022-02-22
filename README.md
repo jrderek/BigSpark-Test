@@ -1,13 +1,13 @@
 # BigSpark-Test
 
 
-Data Science Experience is now Watson Studio. Although some images in this code pattern may show the service as Data Science Experience, the steps and processes will still work.
+Data Science Experience is now on Aapche Spark and Zeppelin. 
+
 
 https://spark.apache.org/ is a popular distributed data processing engine that is built around speed, ease of use and sophisticated analytics, with APIs in Java, Scala, Python, R, and SQL. Like other data processing engines, Spark has a unified optimization engine that computes the optimal way to execute a workload with the main purpose of reducing the disk IO and CPU usage.
 
 We can evaluate and measure the performance of Spark SQL using the TPC-DS benchmark. TPC-DS is a widely used industry standard decision support benchmark that is used to evaluate performance of data processing engines. Given that TPC-DS exercises some key data warehouse features, running TPC-DS successfully reflects the readiness of Spark in terms of addressing the need of a data warehouse application. Apache Spark v2.0 supports all the ninety-nine decision support queries that is part of this TPC-DS benchmark.
 
-This Code Pattern is aimed at helping Spark developers quickly setup and run the TPC-DS benchmark in their own development setup.
 
 When the reader has completed this Code Pattern, they will understand the following:
 
@@ -15,7 +15,10 @@ How to setup the TPC-DS toolkit
 How to generate TPC-DS datasets at different scale factor
 How to create Spark database artifacts
 How to run TPC-DS benchmark queries on Spark in local mode and see the results
+
 Things to consider when increasing the data scale and run against a spark cluster
+
+
 Architecture diagram
 
 ![image](https://user-images.githubusercontent.com/96236642/155144308-ddbf41f1-2504-447e-b621-11b25c1c3d6e.png)
@@ -24,6 +27,7 @@ Commandline
 
 Create the spark tables with pre-generated dataset.
 Run the entire query set or a subset of queries and monitor the results.
+
 Notebook
 Create the spark tables with pre-generated dataset.
 Run the entire query set or individual query.
@@ -40,7 +44,6 @@ Featured technologies
 
 Data Science: Systems and scientific methods to analyze structured and unstructured data in order to extract knowledge and insights.
 
-Artificial Intelligence: Artificial intelligence can be applied to disparate solution spaces to deliver disruptive technologies.
 
 Python: Python is a programming language that lets you work more quickly and integrate your systems more effectively.
 
@@ -49,10 +52,13 @@ Steps
 There are two modes of exercising this Code Pattern:
 
 Run locally using a simple interactive command line shell script.
-Run using a Jupyter notebook in Watson Studio.
+
+Run using a Zeppelin Notebook in Docker.
+
 Run locally
 Clone the repository
 Setup development tools (Optional)
+
 Install Spark
 Run the script
 
@@ -62,7 +68,7 @@ Clone the spark-tpc-ds-performance-test repo locally. In a terminal, run:
 $ git clone https://github.com/IBM/spark-tpc-ds-performance-test 
 
 2. Setup development tools (Optional)
-3. 
+ 
 Due to licensing restrictions, the TPCDS toolkit is not included as part of the code pattern. Instead, a pre-generated data set with 1GB scale factor is included in this pattern. If you want to work with a data set with larger scale factor or explore learning the full life sycle of setting up TPCDS, you can download the tool kit from TPC-DS and compile in your development environment.
 
 Make sure the required development tools are installed in your platform. This Code Pattern is supported on Mac and Linux platforms only. Depending on your platform, run the following command to install the necessary development tools:
