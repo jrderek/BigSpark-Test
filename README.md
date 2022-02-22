@@ -29,14 +29,23 @@ Create the spark tables with pre-generated dataset.
 Run the entire query set or individual query.
 View the query results or performance summary.
 View the performance graph.
+
 Included components
+
 Apache Spark: An open-source, fast and general-purpose cluster computing system
+
 Jupyter Notebook: An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text.
+
 Featured technologies
+
 Data Science: Systems and scientific methods to analyze structured and unstructured data in order to extract knowledge and insights.
+
 Artificial Intelligence: Artificial intelligence can be applied to disparate solution spaces to deliver disruptive technologies.
+
 Python: Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+
 Steps
+
 There are two modes of exercising this Code Pattern:
 
 Run locally using a simple interactive command line shell script.
@@ -46,19 +55,18 @@ Clone the repository
 Setup development tools (Optional)
 Install Spark
 Run the script
+
 1. Clone the repository
 Clone the spark-tpc-ds-performance-test repo locally. In a terminal, run:
 
 $ git clone https://github.com/IBM/spark-tpc-ds-performance-test 
+
 2. Setup development tools (Optional)
+3. 
 Due to licensing restrictions, the TPCDS toolkit is not included as part of the code pattern. Instead, a pre-generated data set with 1GB scale factor is included in this pattern. If you want to work with a data set with larger scale factor or explore learning the full life sycle of setting up TPCDS, you can download the tool kit from TPC-DS and compile in your development environment.
 
 Make sure the required development tools are installed in your platform. This Code Pattern is supported on Mac and Linux platforms only. Depending on your platform, run the following command to install the necessary development tools:
 
-Ubuntu:
-$ sudo apt-get install gcc make flex bison byacc git
-CentOS/RHEL:
-$ sudo yum install gcc make flex bison byacc git
 MacOS:
 $ xcode-select --install
 To compile the toolkit you need to the following :
@@ -67,6 +75,7 @@ unzip <downloaded-tpc-ds-zipfile>
 cd <tpc-ds-toolkit-version>/tools
 make clean
 make OS=<platform>
+  
 3. Install Spark
 To successfully run the TPC-DS tests, Spark must be installed and pre-configured to work with an Apache Hive metastore.
 
@@ -91,9 +100,11 @@ Option 2 - If you don't have an installed Spark version, or your current install
 Option 3 - The last option available is it to download and build it yourself. The first step is to clone the Spark repo:
 
 $ git clone https://github.com/apache/spark.git
+  
 Then build it using these instructions. Please make sure to build Spark with Hive support by following the Building With Hive and JDBC Support section.
 
 4. Run the script
+  
 Note: Verify that the bin/tpcdsenv.sh script has SPARK_HOME setup correctly.
 
 Now that we have Spark setup and the TPC-DS scripts downloaded, we are ready to setup and start running the TPC-DS queries using the bin/tpcdsspark.sh utility script. This driver script will allow you to compile the TPC-DS toolkit to produce the data and the queries, and then run them to collect results.
@@ -115,7 +126,9 @@ CLEANUP
  (4) Cleanup
  (Q) Quit
 ----------------------------------------------
+  
 Please enter your choice followed by [ENTER]: 
+  
 Setup Option: "(1) - Create Spark Tables"
 This option creates the tables in the database name specified by TPCDS_DBNAME defined in bin/tpcdsenv.sh. The default name is TPCDS but can be changed if needed. The created tables are based on the pre-generated data.
 
@@ -165,6 +178,7 @@ INFO: Progress : [########################################] 100%
 INFO: Spark tables created successfully..
 Press any key to continue
 Run Option: "(2) - Run a subset of TPC-DS queries"
+  
 A comma separated list of queries can be specified in this option. The result of each query in the supplied list is generated in TPCDS_WORK_DIR, with a default directory location of work. The format of the result file is query<number>.res.
 
 A summary file named run_summary.txt is also generated. It contains information about query number, execution time and number of rows returned.
@@ -224,8 +238,10 @@ INFO: Progress : [########################################] 100%
 INFO: TPCDS queries ran successfully. Below are the result details
 INFO: Individual result files: spark-tpc-ds-performance-test/work/query<number>.res
 INFO: Summary file: spark-tpc-ds-performance-test/work/run_summary.txt
+  
 Press any key to continue
 Cleanup option: "(4) - Cleanup"
+  
 This will clean up all of the files generated during option steps 1, 2, and 3. If you use this option, make sure to run the setup steps (1) before running queries using option 2 and 3.
 
 Cleanup option: "(Q) - Quit"
@@ -236,7 +252,10 @@ Sign up for Watson Studio
 Create the notebook
 Run the notebook
 Save and Share
+  
+  
 1. Sign up for Watson Studio
+  
 Sign up for IBM's Watson Studio. By creating a project in Watson Studio a free tier Object Storage service will be created in your IBM Cloud account.
 
 Note: When creating your Object Storage service, select the Free storage type in order to avoid having to pay an upgrade fee.
@@ -244,6 +263,7 @@ Note: When creating your Object Storage service, select the Free storage type in
 Take note of your service names as you will need to select them in the following steps.
 
 2. Create the notebook
+  
 In Watson Studio, click on Create notebook to create a notebook.
 Create a project if necessary, provisioning an object storage service if required.
 In the Assets tab, select the Create notebook option.
@@ -259,6 +279,7 @@ Click the Create button.
   
 
 3. Run the notebook
+  
 When a notebook is executed, what is actually happening is that each code cell in the notebook is executed, in order, from top to bottom.
 
 Each code cell is selectable and is preceded by a tag in the left margin. The tag format is In [x]:. Depending on the state of the notebook, the x can be:
@@ -272,6 +293,7 @@ One cell at a time.
 Select the cell, and then press the Play button in the toolbar.
 Batch mode, in sequential order.
 From the Cell menu bar, there are several options available. For example, you can Run All cells in your notebook, or you can Run All Below, that will start executing from the first cell under the currently selected cell, and then continue executing all cells that follow.
+  
 At a scheduled time.
 Press the Schedule button located in the top right section of your notebook panel. Here you can schedule your notebook to be executed once at some future time, or repeatedly at your specified interval.
 4. Save and Share
@@ -284,19 +306,26 @@ How to share your work:
 You can share your notebook by selecting the “Share” button located in the top right section of your notebook panel. The end result of this action will be a URL link that will display a “read-only” version of your notebook. You have several options to specify exactly what you want shared from your notebook:
 
 Only text and output: will remove all code cells from the notebook view.
+  
 All content excluding sensitive code cells: will remove any code cells that contain a sensitive tag. For example, # @hidden_cell is used to protect your dashDB credentials from being shared.
 All content, including code: displays the notebook as is.
 A variety of download as options are also available in the menu.
+  
 Considerations while increasing the scale factor.
+  
 This Code Pattern walks us through the steps that need to be performed to run the TPC-DS benchmark with the qualification scale factor(1GB). Since this is a performance benchmark, typically we need to run the benchmark with varying scale factors to gauge the throughput of the underlying data processing engine. In the section below, we will briefly touch on things to be considered while increasing the data and running the workload against a production cluster.
 
 Generation of the data in larger scale factor: In order to increase the scale, please follow the section titled "Scaling and Database Population" in the benchmark spec.
 Movement of data to the distributed file system: After generating the data, we need to copy or move them to the underlying distributed file system (typically hdfs) that your spark cluster is configured to work with.
 Creation of spark tables: Modify the create table ddl script to change the path to the location of the data after the above copy step. Additionally we may consider to partition the fact tables for better performance.
+  
 We need to tune several spark configs to get optimal performance. Some of them are discussed in the following links.
 Troubleshooting and Tuning spark for heavy work loads
 Scaling up to 100TB
+  
+  
 Learn more
+  
 Data Analytics Code Patterns: Enjoyed this Code Pattern? Check out our other Data Analytics Code Patterns
 AI and Data Code Pattern Playlist: Bookmark our playlist with all of our Code Pattern videos
 Watson Studio: Master the art of data science with IBM's Watson Studio
